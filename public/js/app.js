@@ -28,7 +28,7 @@ locationForm.addEventListener('submit',(e)=>{
     const nmonth=Month[d.getMonth()]
 
 
-    fetch('http://localhost:3000/weather?address='+locationData).then((response)=>{
+    fetch('/weather?address='+locationData).then((response)=>{
    response.json().then((data)=>{
        console.log(data.main.temp)
        day.textContent=nday

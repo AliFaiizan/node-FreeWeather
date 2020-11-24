@@ -4,7 +4,7 @@ const hbs=require('hbs')
 const https= require('https')
 
 
-
+const port=process.env.PORT || 3000
 const app = express()
 
 // Define paths for Express config
@@ -73,7 +73,7 @@ app.get('/weather', (req, res) => {
             //     // temp:temp
             // }
             
-            res.send(weatherData)
+            res.send( weatherData)
           })
           // console.log(JSON.parse(response))
       
@@ -108,8 +108,8 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(PORT, () => {
+    console.log('Server is up on port'+PORT+'.')
 })
 
  
